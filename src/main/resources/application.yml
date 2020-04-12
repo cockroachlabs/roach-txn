@@ -1,0 +1,62 @@
+########################
+# Spring boot properties
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+########################
+
+spring:
+  profiles:
+    active: crdb
+  output:
+    ansi:
+      enabled: ALWAYS
+  jackson:
+    serialization:
+      indent_output: true
+      write_dates_as_timestamps: false
+    deserialization:
+      fail_on_unknown_properties: false
+      fail_on_ignored_properties: false
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSZ
+    locale: en_US
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+  liquibase:
+    change-log: classpath:db/changelog-master.xml
+    default-schema:
+    drop-first: false
+
+  datasource:
+    hikari:
+      connection-test-query: SELECT 1
+      connection-timeout: 15000
+      validation-timeout: 5000
+      idle-timeout: 30000
+      max-lifetime: 30000
+      maximum-pool-size: 25
+      register-mbeans: false
+      initialization-fail-timeout: 30
+
+  jpa:
+    open-in-view: false
+
+# HTTP API server (ServerProperties)
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: conditions,env,info,health,httptrace,metrics,threaddump,shutdown,configprops,liquibase
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: true
+
+info:
+  build:
+    artifact: roach-demo-txn

@@ -1,0 +1,16 @@
+spring:
+  liquibase:
+    contexts: psql
+    default-schema:
+    drop-first: false
+    enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/roach_demo_txn
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password:
+    hikari:
+      # Note: Running postgres in anything weaker may violate positive balance invariant
+      # Comment-out to see it in action
+#      transaction-isolation: TRANSACTION_SERIALIZABLE

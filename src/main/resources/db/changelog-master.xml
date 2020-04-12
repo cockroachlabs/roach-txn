@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- Note: Context names match Spring profile names -->
+
+    <changeSet id="1" author="root" context="psql">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="db/create-psql.sql"/>
+    </changeSet>
+
+    <changeSet id="2" author="root" context="crdb">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="db/create-crdb.sql"/>
+    </changeSet>
+                                             
+    <include file="changelog-dml.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

@@ -1,0 +1,12 @@
+spring:
+  liquibase:
+    contexts: crdb
+    default-schema:
+    drop-first: false
+    enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:26257/roach_demo_txn?sslmode=disable
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password:
