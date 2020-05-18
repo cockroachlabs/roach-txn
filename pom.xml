@@ -5,15 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>2.2.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>io.roach.demo</groupId>
-    <artifactId>roach-demo-txn</artifactId>
+    <groupId>io.roach.txn</groupId>
+    <artifactId>roach-txn</artifactId>
     <version>1.0.0.BUILD-SNAPSHOT</version>
-
-    <name>roach-demo-txn</name>
 
     <description>
         Simple CockroachDB Spring Boot demo using AOP and annotation-driven transaction demarcation with exponential retries.
@@ -64,7 +62,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>3.8.0</version>
+            <version>3.8.9</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -75,7 +73,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
-            <version>2.2.6.RELEASE</version>
+            <version>2.2.7.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -91,7 +89,7 @@
     </dependencies>
 
     <build>
-        <finalName>roach-demo-txn</finalName>
+        <finalName>roach-txn</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -105,7 +103,7 @@
                 </executions>
                 <configuration>
                     <executable>true</executable>
-                    <mainClass>io.roach.demo.txn.Application</mainClass>
+                    <mainClass>io.roach.txn.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>

@@ -243,7 +243,7 @@ Schema creation and initial data population is automatic via Liquibase.
 
 Create the database to run test against:
 
-    CREATE database roach_demo_txn;
+    CREATE database roach_txn;
     
 The schema and data is created via Liquibase when starting the server.    
 
@@ -260,19 +260,19 @@ To build and deploy to your local Maven repo, execute:
 
 Either start with:
 
-    java -jar target/roach-demo-txn.jar 
+    java -jar target/roach-txn.jar 
 
-or open your favourite IDE IntelliJ and run `io.roach.demo.txn.Application`.
+or open your favourite IDE IntelliJ and run `io.roach.txn.Application`.
 
 You can select between the databases by using Spring profiles (crdb or psql):
 
 CockroachDB and a custom URL:
 
-    java -jar target/roach-demo-txn.jar --spring.profiles.active=crdb --spring.datasource.url=jdbc:postgresql://192.168.1.1:26257/roach_demo_txn?sslmode=disable    
+    java -jar target/roach-txn.jar --spring.profiles.active=crdb --spring.datasource.url=jdbc:postgresql://192.168.1.1:26257/roach_txn?sslmode=disable    
 
 PostgreSQL and a custom URL:
 
-    java -jar target/roach-demo-txn.jar --spring.profiles.active=psql --spring.datasource.url=jdbc:postgresql://192.168.1.1:5432/roach_demo_txn --spring.datasource.username=bobby --spring.datasource.password=tables
+    java -jar target/roach-txn.jar --spring.profiles.active=psql --spring.datasource.url=jdbc:postgresql://192.168.1.1:5432/roach_txn --spring.datasource.username=bobby --spring.datasource.password=tables
 
 To drop and recreate the schema, add:
 
@@ -286,4 +286,4 @@ PostgreSQL use RC isolation by default, so the test will fail. To make it not fa
 
 Stress test the bank by sending concurrent HTTP requests to `localhost:8080`:
 
-    ./mvnw -DskipTests=false -Dtest=io.roach.demo.txn.BankStressTest test
+    ./mvnw -DskipTests=false -Dtest=io.roach.txn.BankStressTest test

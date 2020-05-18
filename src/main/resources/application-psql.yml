@@ -6,7 +6,7 @@ spring:
     enabled: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/roach_demo_txn
+    url: jdbc:postgresql://localhost:5432/roach_txn
     driver-class-name: org.postgresql.Driver
     username: postgres
     password:

@@ -59,4 +59,4 @@ management:
 
 info:
   build:
-    artifact: roach-demo-txn
+    artifact: roach-txn

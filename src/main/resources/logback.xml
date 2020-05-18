@@ -8,7 +8,7 @@
     <!--<logger name="org.hibernate.type" level="DEBUG"/>-->
 <!--    <logger name="org.hibernate.SQL" level="DEBUG"/>-->
 <!--    <logger name="liquibase" level="DEBUG"/>-->
-    <logger name="io.roach.demo" level="DEBUG"/>
+    <logger name="io.roach" level="DEBUG"/>
 
     <root level="INFO"/>
 </configuration>
